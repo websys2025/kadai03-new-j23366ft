@@ -32,6 +32,11 @@
             // 商品購入の関数
             function buyItem(no) {
 
+            if (no < 1 || no > items) {//エラー処理
+                console.log("エラー: 入力された商品番号は存在しません。");
+                return;
+            }
+
             // 在庫があれば購入
             if (items[no-1].stock > 0) {
                 items[no-1].stock -= 1; // 在庫を1減らす
